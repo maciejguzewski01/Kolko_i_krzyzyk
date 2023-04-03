@@ -7,12 +7,7 @@
     tools:context=".MainActivity"
     android:layout_gravity="center">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Wybierz znak, a następnie pole"
-        android:id="@+id/textView0"
-        android:layout_gravity="top"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -47,16 +42,19 @@
         android:id="@+id/row2"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <Button
             android:id="@+id/button2_1"
-            android:layout_width="match_parent"
+            android:layout_width="103dp"
             android:layout_height="match_parent"
             android:text="-"></Button>
+
         <Button
             android:id="@+id/button2_2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="-"></Button>
+
         <Button
             android:id="@+id/button2_3"
             android:layout_width="match_parent"
@@ -105,12 +103,67 @@
         android:id="@+id/row4"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Restart"></Button>
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Restart"></Button>
       </TableRow>
+
+    <TableRow
+        android:id="@+id/row5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="IGracz 1: "
+            android:id="@+id/textView_G1Z"
+            android:layout_gravity="top"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="0"
+            android:id="@+id/textView_G1"
+            android:layout_gravity="top"/>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/row6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Gracz 2: "
+            android:id="@+id/textView_G2Z"
+            android:layout_gravity="top"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="0"
+            android:id="@+id/textView_G2"
+            android:layout_gravity="top"/>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/row7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Remisy: "
+            android:id="@+id/textView_RL"
+            android:layout_gravity="top"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="0"
+            android:id="@+id/textView_R"
+            android:layout_gravity="top"/>
+    </TableRow>
 
 
 </TableLayout>

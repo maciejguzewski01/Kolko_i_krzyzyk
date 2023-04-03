@@ -17,6 +17,9 @@ import android.widget.TextView;
 import android.view.View.OnClickListener;
 
 public class MainActivity extends AppCompatActivity {
+    private  int gamerOneWin=0;
+    private int gamerTwoWin=0;
+    private int draw=0;
 
     private Gamer next_move;
     private Gamestate state;
@@ -29,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
     private Button buttons[];
 
 
-    private TextView textView1, textView2, textView3;
+    private TextView textView1, textView2;
+    private TextView textView_One, textView_Two, textView_draw;
 
     private boolean have_won(int x)
     {
@@ -125,8 +129,8 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if(state==Gamestate.OVER) return;
-
                 if(who[i]!=-1) return;
+
 
                     if(next_move==Gamer.GAMER_ONE) buttons[i].setText("O");
                     else if(next_move==Gamer.GAMER_TWO) buttons[i].setText("X");
@@ -135,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
 
                     if(next_move==Gamer.GAMER_ONE) who[i]=1;
                     else if(next_move==Gamer.GAMER_TWO) who[i]=2;
+                    board[i]=Field.SIGN;
                     //------
 
                     if(have_won(i)==true) {
@@ -142,12 +147,18 @@ public class MainActivity extends AppCompatActivity {
                         textView2.setText("Wygral: "+next_gamer);
                         state=Gamestate.OVER;
                         buttons[9].setVisibility(View.VISIBLE);
+                        if(winner==Gamer.GAMER_ONE) gamerOneWin++;
+                        else gamerTwoWin++;
+                        textView_One.setText(Integer.toString(gamerOneWin));
+                        textView_Two.setText(Integer.toString(gamerTwoWin));
                         return;
                     }else if(have_end()==true)//remis
                     {
                         textView2.setText("REMIS");
                         state=Gamestate.OVER;
                         buttons[9].setVisibility(View.VISIBLE);
+                        draw++;
+                        textView_draw.setText(Integer.toString(draw));
                         return;
                     }
 
@@ -213,6 +224,14 @@ public class MainActivity extends AppCompatActivity {
 
         buttons[9]=findViewById(R.id.button4);
         buttons[9].setVisibility(View.INVISIBLE);
+
+        textView_One=findViewById(R.id.textView_G1);
+        textView_Two=findViewById(R.id.textView_G2);
+        textView_draw=findViewById(R.id.textView_R);
+
+        textView_One.setText(Integer.toString(gamerOneWin));
+        textView_Two.setText(Integer.toString(gamerTwoWin));
+        textView_draw.setText(Integer.toString(draw));
 
 
         for(int i=0;i<9;++i)
